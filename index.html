@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portfolio de Videojuegos</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <nav class="barra-navegacion">
+        <div class="logo">🎮 Mi Portfolio</div>
+        <div class="enlaces">
+            <a href="#sobre-mi">Sobre Mí</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+    </nav>
+
+    <header class="portada-bienvenida">
+        <div class="contenido-portada">
+            <span class="subtitulo-portada">DEVELOPER DE VIDEOJUEGOS</span>
+            <h1 class="nombre-principal">Nadia Ayala</h1> 
+            <div class="indicador-scroll">
+                <p>Hacé scroll para explorar</p>
+                <div class="flecha-animada">↓</div>
+            </div>
+        </div>
+    </header>
+
+    <section id="sobre-mi" class="seccion-sobre-mi">
+        <div class="contenedor-sobre-mi">
+            <h2>Sobre Mí</h2>
+            <p>
+                ¡Hola! Bienvenidos a mi portfolio. ´Soy Nadia Ayala y tengo 24 años. Soy estudiante de la carrera de desarrollo y gestión de videojuegos y acá les presento los proyectos 
+                de videojuegos que estuve desarrollando hasta ahora. 
+            </p>
+        </div>
+    </section>
+
+    <section id="proyectos" class="seccion-galeria">
+        <h2 class="titulo-seccion">Mis Proyectos</h2>
+        
+        <div class="contenedor-proyectos">
+            
+            <div class="tarjeta-juego">
+                <img src="lovelydressup.jpg" alt="Captura de Lovely Dress-Up" class="imagen-juego" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                <div class="imagen-placeholder" style="display:none;">👗 [Captura Dress-Up]</div>
+                <div class="contenido-juego">
+                    <h2>Lovely Dress-Up</h2>
+                    <p>Un juego de vestir en el que puedes elegir vestimentas y vestir a tu muñeca.</p>
+                    <span class="etiqueta">Scratch</span>
+                    
+                    <div class="grupo-botones">
+                        <button class="btn-ver-mas" onclick="mostrarDetalles('Lovely Dress-Up', 'Este fue mi primer proyecto desarrollado en Scratch. El objetivo del juego es permitir al jugador vestir a un personaje utilizando diferentes prendas disponibles. El jugador puede seleccionar distintos elementos de vestimenta y combinarlos libremente para crear un conjunto.', 'lovelydressup.jpg', 'lovelydressup2.jpg', 'https://scratch.mit.edu/projects/1291116298', '', '')">Ver más detalles</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tarjeta-juego">
+                <img src="elpurgatorio.jpg" alt="Captura de El Purgatorio" class="imagen-juego" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                <div class="imagen-placeholder" style="display:none;">⚖️ [Captura El Purgatorio]</div>
+                <div class="contenido-juego">
+                    <h2>El Purgatorio</h2>
+                    <p>Un juego de lógica y toma de decisiones con múltiples finales. El jugador debe balancear variables para avanzar.</p>
+                    <span class="etiqueta">RPG Maker MV</span>
+                    
+                    <div class="grupo-botones">
+                        <button class="btn-ver-mas" onclick="mostrarDetalles('El Purgatorio', 'Un juego de rol y misterio enfocado en la narrativa interactiva. El jugador se encuentra en un entorno donde cada elección altera el transcurso de la historia, de las variables y el destino de las almas, desbloqueando caminos ocultos y diferentes finales según las decisiones morales que tome.', 'elpurgatorio.jpg', 'elpurgatorio2.jpg', '', 'https://www.youtube.com/embed/lirsn4FO3lE', 'https://www.mediafire.com/file/h5rxybjvdeszrwx/el_purgatorio_administrativo.rar/file')">Ver más detalles</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tarjeta-juego">
+                <img src="parkour.jpg" alt="Captura de Lava Mortal" class="imagen-juego" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                <div class="imagen-placeholder" style="display:none;">🏃 [Captura Lava Mortal]</div>
+                <div class="contenido-juego">
+                    <h2>Lava Mortal</h2>
+                    <p>Un juego de plataformas en 3D de 5 niveles enfocado en las físicas de movimiento, saltos precisos y fluidez.</p>
+                    <span class="etiqueta">Unity / C#</span>
+                    
+                    <div class="grupo-botones">
+                        <button class="btn-ver-mas" onclick="mostrarDetalles('Lava Mortal', 'Este proyecto explora el desarrollo en 3D dentro de Unity a lo largo de 5 desafiantes niveles. Se programaron mecánicas de carrera en muros (wall-run), saltos impulsados por físicas de aceleración y detección de colisiones sobre superficies peligrosas de lava hirviente.', 'parkour.jpg', 'parkour-detalles.jpg', '', 'https://www.youtube.com/embed/X-UJVM4C58', 'https://www.mediafire.com/file/o9rh8i0ayg03avo/LAVA_MORTAL.rar/file')">Ver más detalles</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="miModal" class="modal">
+        <div class="contenido-modal">
+            <span class="cerrar" onclick="cerrarModal()">&times;</span>
+            <h2 id="modalTitulo"></h2>
+            
+            <div class="galeria-modal">
+                <img id="modalImagen1" src="" alt="Captura 1" class="imagen-modal">
+                <img id="modalImagen2" src="" alt="Captura 2" class="imagen-modal">
+            </div>
+            
+            <div id="contenedorVideoModal" class="contenedor-video-modal" style="display: none;">
+                <iframe id="modalVideo" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="no-referrer" allowfullscreen></iframe>
+            </div>
+            
+            <p id="modalDescripcion"></p>
+            
+            <div class="enlaces-modal" id="modalEnlacesContainer">
+                <a id="btnModalJugar" href="#" target="_blank" class="btn-modal-link jugar">🎮 Jugar en Navegador</a>
+                <a id="btnModalDescargar" href="#" target="_blank" class="btn-modal-link descargar">📥 Descargar Juego</a>
+            </div>
+        </div>
+    </div>
+    <footer id="contacto" class="seccion-contacto">
+        <div class="contenedor-contacto">
+            <h2>¿Querés que trabajemos juntos?</h2>
+            <p>Estoy abierta a proyectos de desarrollo de videojuegos, colaboraciones para la facultad o consultas sobre mis juegos. ¡Dejame un mensaje!</p>
+            
+            <div class="redes-contacto">
+                <a href="ayalanadia11@gmail.com" class="btn-contacto email">✉️ Enviar Mail</a>
+                
+                <a href="https://www.linkedin.com/in/nadia-ayala-454a0b326/" target="_blank" class="btn-contacto linkedin">💼 LinkedIn</a>
+                
+                <a href="https://github.com/ayalanadia11" target="_blank" class="btn-contacto github">🐙 GitHub</a>
+            </div>
+            
+            <div class="derechos-autor">
+                <p>© 2026 Nadia Ayala - Hecho con 💜 para la Facultad</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
